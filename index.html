@@ -116,11 +116,42 @@ header{
   background:var(--grad);
   transform:translate(-20%,-50%);
   z-index:0;
-  animation:float 14s ease-in-out infinite;
+  overflow:hidden;
+  animation:float 14s ease-in-out infinite, morph 19s ease-in-out infinite;
+}
+/* iridiscencia líquida: los colores giran lentamente dentro de la gota */
+.sphere::before{
+  content:'';position:absolute;inset:-30%;
+  background:conic-gradient(from 20deg,
+    rgba(250,203,14,.95), rgba(240,107,168,.95) 28%,
+    rgba(120,186,230,.95) 58%, rgba(255,255,255,.98) 82%,
+    rgba(250,203,14,.95));
+  filter:blur(46px);
+  animation:swirl 24s linear infinite;
+}
+/* refracción: brillo especular como luz atravesando agua */
+.sphere::after{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 31% 24%, rgba(255,255,255,.85), rgba(255,255,255,0) 42%),
+    radial-gradient(circle at 74% 80%, rgba(255,255,255,.4), rgba(255,255,255,0) 38%);
 }
 @keyframes float{
   0%,100%{transform:translate(-20%,-50%);}
   50%{transform:translate(-20%,-54%);}
+}
+@keyframes swirl{to{transform:rotate(1turn);}}
+/* ondulación de gota: la silueta respira como líquido en suspensión */
+@keyframes morph{
+  0%,100%{border-radius:50%;}
+  30%{border-radius:52% 48% 56% 44% / 46% 54% 45% 55%;}
+  62%{border-radius:46% 54% 44% 56% / 55% 45% 56% 44%;}
+}
+@media(prefers-reduced-motion:reduce){
+  .sphere,.sphere::before,.hero-title .line span,.hero-copy{animation:none;}
+  .hero-title .line span{transform:none;}
+  .hero-copy{opacity:1;}
+  .reveal{opacity:1;transform:none;transition:none;}
 }
 .hero-content{position:relative;z-index:1;padding-top:76px;}
 .hero-label{margin-bottom:30px;}
@@ -160,6 +191,7 @@ section{padding:119px 0 0;}
 .reveal.visible{opacity:1;transform:none;}
 
 /* modo estático (?static): captura/impresión sin animaciones */
+.static .sphere{animation:none;}
 .static .reveal{opacity:1;transform:none;transition:none;}
 .static header{min-height:900px;}
 .static .hero-title .line span{transform:none;animation:none;}
