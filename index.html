@@ -101,7 +101,15 @@ nav.scrolled{border-bottom-color:var(--ash);}
 }
 .nav-links a:hover{text-decoration:underline;text-underline-offset:4px;}
 .nav-links .nav-cta{font-weight:700;}
-@media(max-width:760px){.nav-links li:not(:last-child){display:none;}}
+/* botón hacia la Versión 2 (propuesta OpenCode) */
+.nav-version{
+  font-size:15px;font-weight:700;letter-spacing:0.15px;
+  color:var(--ink);text-decoration:none;
+  border:1px solid var(--ink);border-radius:10px;padding:7px 14px;
+  transition:background .2s ease,color .2s ease;white-space:nowrap;
+}
+.nav-version:hover{background:var(--ink);color:var(--parchment);}
+@media(max-width:760px){.nav-links li:not(:nth-last-child(-n+2)){display:none;}}
 
 /* ---------- hero ---------- */
 header{
@@ -271,6 +279,7 @@ footer{border-top:1px solid var(--ash);margin-top:76px;}
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a class="nav-cta" href="#contacto">Hablemos&nbsp;→</a></li>
+      <li><a class="nav-version" href="version-2.html">Versión&nbsp;2&nbsp;↗</a></li>
     </ul>
   </div>
 </nav>
