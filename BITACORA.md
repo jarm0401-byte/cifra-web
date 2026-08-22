@@ -5,6 +5,33 @@ Formato sugerido: `## AAAA-MM-DD — <motor>` + Cambios / Hallazgos / Ideas / Pe
 
 ---
 
+## 2026-08-21 — OpenCode (la web se vuelve compartible: favicon, og:, WhatsApp)
+
+**Contexto:** relevo tras la sesión de Notion. Ángel descartó Syrap/Royal Prestige y
+declaró a CIFRA único proyecto activo con meta explícita: **terminar la página web**.
+Esta sesión liquida los pendientes técnicos que no requieren decisiones suyas.
+
+**Cambios**
+- **Favicon SVG inline en ambas versiones:** cuadrado tinta con anillo de gradiente
+  iridiscente — la marca por fin en la pestaña, sin archivo extra.
+- **Metadatos sociales completos (`og:` / `twitter:`)** en ambas versiones, con dominio
+  provisional `cifra-web.vercel.app`. Si el dominio final cambia, tocar og:url/og:image.
+- **`assets/img/og.png` y `og-v2.png` (1200×630):** capturas del hero real de cada
+  versión vía Chrome headless en modo `?static`. Verificadas visualmente — al compartir
+  el link en WhatsApp ya sale tarjeta con imagen.
+- **Botón «WhatsApp directo»** montado en contacto de ambas versiones: permanece
+  oculto hasta que la constante `WHATSAPP` (inicio del script) tenga número real.
+
+**Hallazgos**
+- Vercel CLI instalado (v59.3.0) pero **sin sesión**: falta `vercel login` de Ángel.
+
+**Pendiente de Ángel**
+- Número de WhatsApp para activar el botón (una línea: `const WHATSAPP='52…'`).
+- `vercel login` (un clic en navegador) → después corro el primer deploy.
+- Decisión final: ¿V1, V2 o convivencia?
+
+---
+
 ## 2026-08-21 — OpenCode (relevo: memoria privada + cierre de inspiraciones + Vercel)
 
 **Contexto:** esta sesión retoma el hilo después de que la sesión de `inspiraciones/`
