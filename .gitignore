@@ -1,21 +1,14 @@
 # Memoria privada de Angel — nunca se publica
 memoria.html
 
-# Basura del sistema
-*.stackdump
-Thumbs.db
-desktop.ini
-.DS_Store
-
-# ── Videos crudos de inspiraciones: NO entran al repo ──
-# El material de trabajo pesado vive solo en esta PC (respaldo manual en OneDrive).
-# Cuando un video se aprueba se comprime y se guarda en assets/video/ (ese sí se sube).
+# Videos crudos de inspiraciones/ — viven solo en esta PC.
+# Lo aprobado se comprime y pasa a assets/video/, que sí viaja al repo.
 inspiraciones/**/*.mp4
 inspiraciones/**/*.mov
 inspiraciones/**/*.mkv
 inspiraciones/**/*.avi
 inspiraciones/**/*.m4v
 inspiraciones/**/*.webm
-inspiraciones/**/*.MP4
-inspiraciones/**/*.MOV
-inspiraciones/**/*.MKV
+
+# Basura del sistema
+*.stackdump

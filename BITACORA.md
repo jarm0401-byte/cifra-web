@@ -5,6 +5,31 @@ Formato sugerido: `## AAAA-MM-DD — <motor>` + Cambios / Hallazgos / Ideas / Pe
 
 ---
 
+## 2026-08-21 — OpenCode (relevo: memoria privada + cierre de inspiraciones + Vercel)
+
+**Contexto:** esta sesión retoma el hilo después de que la sesión de `inspiraciones/`
+quedó sin commit ni push (se anuncian cambios en bitácora que no llegaron a disk:
+`.gitignore` de videos y actualización de LEEME — el LEEME sí existe dentro de
+`inspiraciones/`, el `.gitignore` no existía). Se completa ese trabajo pendiente.
+
+**Cambios**
+- `.gitignore` raíz creado combinando dos intents: videos crudos de `inspiraciones/`
+  fuera del repo (mp4/mov/mkv/avi/m4v/webm, como pedía la sesión anterior) Y
+  `memoria.html` — nuevo archivo PRIVADO de Angel.
+- Creada **`memoria.html`** (local, gitignored): línea de tiempo privada de cambios
+  importantes con buscador, filtros por motor y estadísticas; sembrada con los 7 commits
+  reales. Regla #9 añadida al protocolo: los motores registran hitos ahí.
+- Commit y push del sistema `inspiraciones/` (estructura + LEEME + notas) que esperaba
+  visto de Angel — otorgado implícitamente al pedir despliegue en Vercel.
+
+**Estado Vercel**
+- CLI no instalado → instalando `vercel` vía npm para desplegar desde aquí.
+
+**Pendiente**
+- Login/deploy de Vercel (en curso).
+
+---
+
 ## 2026-08-21 — OpenCode (videos fuera del repo + estructura libre)
 
 **Cambios**
