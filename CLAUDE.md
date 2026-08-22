@@ -7,14 +7,16 @@ que trabajan para Angel (dueño de CIFRA): tú (Claude Code) y OpenCode.
 1. `AGENTS.md` — protocolo completo de colaboración (reglas obligatorias)
 2. `BITACORA.md` — bitácora compartida: qué cambió, qué se encontró, ideas y pendientes
 
-**Tu responsabilidad:** la **Versión 1** (`index.html`).
-OpenCode mantiene la **Versión 2** (`version-2.html`). No la rompas ni la fusiones sin
-que Angel lo pida; deja tus hallazgos e ideas en la bitácora para que él las aproveche
-(y lee los suyos). Cuando termines una sesión, registra tu entrada en `BITACORA.md`.
+**Estado desde el 22/08/2026:** la **Versión 2 «Nocturna»** ganó y ahora ES el sitio:
+vive en `index.html`. La versión vieja quedó congelada en `version-1.html` y ya no
+está enlazada desde ningún lado. Los botones «Versión 1 ↔ Versión 2» se retiraron.
+
+Deja tus hallazgos e ideas en la bitácora para que Angel las aproveche (y lee los
+suyos). Cuando termines una sesión, registra tu entrada en `BITACORA.md`.
 
 Además, cada cambio importante debe registrarse en `memoria.html` (arreglo `MEMORIAS`,
 entrada nueva al final). Ojo: ese archivo es **local y privado de Angel** — está en
 `.gitignore`, no existe en GitHub y jamás debes subirlo.
 
-Los botones «Versión 1 ↔ Versión 2» de ambas páginas son elementos compartidos: mantenlos
-funcionando en ambos archivos.
+`.vercelignore` mantiene fuera del sitio publicado los archivos de taller
+(`AGENTS.md`, `BITACORA.md`, `CLAUDE.md`, `README.md`, `inspiraciones/`).

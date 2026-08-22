@@ -1,0 +1,8 @@
+# Documentacion interna del taller: no se publica.
+AGENTS.md
+BITACORA.md
+CLAUDE.md
+README.md
+inspiraciones/
+*.stackdump
+.gitignore
