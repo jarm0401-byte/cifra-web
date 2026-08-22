@@ -3,128 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CIFRA — Estudio digital</title>
-<meta name="description" content="Cifra es un estudio digital en Cuernavaca, Morelos. Diseñamos cómo se ve y se cuenta un negocio en digital.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23facb0e'/%3E%3Cstop offset='.35' stop-color='%23f06ba8'/%3E%3Cstop offset='.7' stop-color='%2378bae6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%231d1d1d'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='url(%23g)' stroke-width='8'/%3E%3C/svg%3E">
+<title>CIFRA — Estudio digital en Cuernavaca</title>
+<meta name="description" content="Cifra es un estudio digital en Cuernavaca. Diseñamos cómo se ve y se cuenta un negocio en digital: sitios web a medida, identidad y presencia local.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23facb0e'/%3E%3Cstop offset='.35' stop-color='%23f06ba8'/%3E%3Cstop offset='.7' stop-color='%2378bae6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%23141412'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='url(%23g)' stroke-width='8'/%3E%3C/svg%3E">
 <!-- ⚠️ Dominio provisional (Vercel). Actualizar og:url / og:image si el dominio final cambia. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="CIFRA">
 <meta property="og:title" content="CIFRA — Estudio digital · Cuernavaca">
 <meta property="og:description" content="Diseñamos cómo se ve y se cuenta un negocio en digital. Sitios web y presencia digital para negocios de Cuernavaca.">
 <meta property="og:url" content="https://cifra-web.vercel.app/">
-<meta property="og:image" content="https://cifra-web.vercel.app/assets/img/og.png">
+<meta property="og:image" content="https://cifra-web.vercel.app/assets/img/og-v2.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="es_MX">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CIFRA — Estudio digital · Cuernavaca">
 <meta name="twitter:description" content="Diseñamos cómo se ve y se cuenta un negocio en digital. Sitios web y presencia digital para negocios de Cuernavaca.">
-<meta name="twitter:image" content="https://cifra-web.vercel.app/assets/img/og.png">
+<meta name="twitter:image" content="https://cifra-web.vercel.app/assets/img/og-v2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   CIFRA — sistema de diseño basado en la especificación OFF+BRAND
-   Paleta: Parchment #e5e4e0 · Ink #1d1d1d · Paper #fff · Ash #bfbebe · Stone #cdcdc9
-   Radios: 0px tarjetas · 10px elementos interactivos
-   Ancho máximo: 1400px · Unidad base: 4px
+   CIFRA — Estudio digital · Cuernavaca, Morelos
+   Misma marca, otra atmósfera: tinta profunda, tipografía
+   Space Grotesk + JetBrains Mono, anillo de cifras giratorio,
+   marquesina, contadores vivos. El gradiente iridiscente se
+   conserva como único acento (continuidad con la Versión 1).
    ============================================================ */
 :root{
-  --parchment:#e5e4e0;
-  --ink:#1d1d1d;
-  --paper:#ffffff;
-  --ash:#bfbebe;
-  --stone:#cdcdc9;
+  --tinta:#141412;
+  --tinta-2:#1b1b18;
+  --hueso:#e9e7df;
+  --humo:#8d8c84;
+  --linea:#2d2d29;
   --grad:linear-gradient(255deg, rgb(250,203,14), rgb(240,107,168) 30%, rgb(120,186,230) 65%, rgb(255,255,255));
-  --font:'Inter','Neue Haas Grotesk Display','Helvetica Neue',Arial,sans-serif;
+  --grot:'Space Grotesk','Helvetica Neue',Arial,sans-serif;
+  --mono:'JetBrains Mono','Consolas','Courier New',monospace;
   --max:1400px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{
-  background:var(--parchment);
-  color:var(--ink);
-  font-family:var(--font);
-  font-size:18px;
-  line-height:1.4;
-  letter-spacing:0.23px;
+  background:var(--tinta);
+  color:var(--hueso);
+  font-family:var(--grot);
+  font-size:17px;line-height:1.5;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
-::selection{background:var(--ink);color:var(--parchment);}
+/* papel milimetrado tenue: el rigor matemático hecho fondo */
+body::before{
+  content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(233,231,223,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(233,231,223,.03) 1px,transparent 1px);
+  background-size:56px 56px;
+}
+::selection{background:var(--hueso);color:var(--tinta);}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 30px;}
 
 /* ---------- tipografía ---------- */
 .display{
-  font-size:clamp(46px,7.2vw,103px);
-  font-weight:400;line-height:0.86;letter-spacing:1.34px;
+  font-size:clamp(48px,8vw,118px);
+  font-weight:500;line-height:.92;letter-spacing:-.01em;
   text-transform:uppercase;
 }
-.heading-lg{font-size:clamp(40px,5.4vw,76px);font-weight:400;line-height:0.86;letter-spacing:0.99px;text-transform:uppercase;}
-.heading{font-size:clamp(38px,5vw,70px);font-weight:400;line-height:0.86;letter-spacing:0.91px;text-transform:uppercase;}
-.heading-sm{font-size:clamp(30px,3.3vw,46px);font-weight:400;line-height:1.0;letter-spacing:0.6px;text-transform:uppercase;}
-.subheading{font-size:clamp(24px,2.4vw,34px);font-weight:400;line-height:1.4;letter-spacing:0.44px;}
-.body-sm{font-size:15px;letter-spacing:0.15px;}
+.heading-sm{font-size:clamp(30px,3.4vw,50px);font-weight:500;line-height:.98;text-transform:uppercase;}
 .caption{
-  font-size:11px;font-weight:400;line-height:1.4;
-  letter-spacing:0.05em;text-transform:uppercase;
+  font-family:var(--mono);font-size:11px;font-weight:400;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--humo);
 }
-
-/* ---------- enlaces fantasma ---------- */
-.ghost-link{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:15px;font-weight:400;letter-spacing:0.15px;
-  color:var(--ink);text-decoration:none;
-  padding:5px 6px;border-radius:10px;
-  background:transparent;border:none;cursor:pointer;font-family:var(--font);
-}
-.ghost-link .arrow{display:inline-block;transition:transform .25s ease;}
-.ghost-link:hover{text-decoration:underline;text-underline-offset:4px;}
-.ghost-link:hover .arrow{transform:translateX(5px);}
-
-/* ---------- botones filtro ---------- */
-.filter-btn{
-  font-family:var(--font);font-size:15px;letter-spacing:0.15px;color:var(--ink);
-  background:transparent;border:1px solid var(--ash);border-radius:10px;
-  padding:8px 19px;cursor:pointer;
-  transition:background .2s ease,color .2s ease,border-color .2s ease;
-}
-.filter-btn:hover,.filter-btn.active{background:var(--ink);color:var(--parchment);border-color:var(--ink);}
+.body-sm{font-size:15px;color:#cfcdc4;}
 
 /* ---------- navegación ---------- */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:50;
-  background:var(--parchment);
-  border-bottom:1px solid transparent;
-  transition:border-color .3s ease;
+  background:rgba(20,20,18,.82);backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent;transition:border-color .3s ease;
 }
-nav.scrolled{border-bottom-color:var(--ash);}
+nav.scrolled{border-bottom-color:var(--linea);}
 .nav-inner{
-  max-width:var(--max);margin:0 auto;padding:19px 30px;
+  max-width:var(--max);margin:0 auto;padding:16px 30px;
   display:flex;align-items:center;justify-content:space-between;
 }
 .wordmark{
-  font-size:18px;font-weight:700;letter-spacing:0.05em;
-  text-transform:uppercase;color:var(--ink);text-decoration:none;
+  font-weight:700;font-size:18px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--hueso);text-decoration:none;display:flex;align-items:baseline;gap:8px;
 }
-.wordmark sup{font-size:9px;font-weight:400;}
-.nav-links{display:flex;align-items:center;gap:19px;list-style:none;}
+.wordmark .vtag{
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--tinta);
+  padding:2px 6px;border-radius:3px;background:var(--grad);font-weight:500;
+}
+.nav-links{display:flex;align-items:center;gap:20px;list-style:none;}
 .nav-links a{
-  font-size:15px;font-weight:400;letter-spacing:0.15px;
-  color:var(--ink);text-decoration:none;padding:5px 6px;border-radius:10px;
+  font-family:var(--mono);font-size:13px;color:var(--hueso);
+  text-decoration:none;padding:5px 4px;
 }
-.nav-links a:hover{text-decoration:underline;text-underline-offset:4px;}
-.nav-links .nav-cta{font-weight:700;}
-/* botón hacia la Versión 2 (propuesta OpenCode) */
-.nav-version{
-  font-size:15px;font-weight:700;letter-spacing:0.15px;
-  color:var(--ink);text-decoration:none;
-  border:1px solid var(--ink);border-radius:10px;padding:7px 14px;
-  transition:background .2s ease,color .2s ease;white-space:nowrap;
+.nav-links a:hover{color:rgb(250,203,14);}
+.pill{
+  font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--hueso);text-decoration:none;
+  border:1px solid var(--linea);border-radius:999px;padding:9px 16px;
+  transition:border-color .25s ease,color .25s ease,background .25s ease;
+  white-space:nowrap;
 }
-.nav-version:hover{background:var(--ink);color:var(--parchment);}
-@media(max-width:760px){.nav-links li:not(:nth-last-child(-n+2)){display:none;}}
+.pill:hover{border-color:var(--hueso);}
+.pill.solid{background:var(--hueso);color:var(--tinta);border-color:var(--hueso);font-weight:500;}
+.pill.solid:hover{background:transparent;color:var(--hueso);}
+@media(max-width:900px){.nav-links li:not(:nth-last-child(-n+2)){display:none;}}
 
 /* ---------- hero ---------- */
 header{
@@ -132,156 +120,219 @@ header{
   display:flex;flex-direction:column;justify-content:center;
   overflow:hidden;
 }
-.sphere{
-  position:absolute;top:50%;left:58%;
-  width:min(50vh,540px);height:min(50vh,540px);
-  border-radius:50%;
-  background:var(--grad);
-  transform:translate(-20%,-50%);
-  z-index:0;
-  overflow:hidden;
-  animation:float 14s ease-in-out infinite, morph 19s ease-in-out infinite;
+.hero-content{position:relative;z-index:2;padding-top:80px;}
+.hero-label{display:flex;align-items:center;gap:12px;margin-bottom:34px;}
+.hero-label::before{content:'';width:42px;height:1px;background:var(--humo);}
+.hero-title .line{display:block;overflow:hidden;padding-top:.12em;margin-top:-.12em;}
+.hero-title .line span{
+  display:block;transform:translateY(115%);
+  animation:rise .95s cubic-bezier(.22,.9,.3,1) forwards;
 }
-/* iridiscencia líquida: los colores giran lentamente dentro de la gota */
-.sphere::before{
-  content:'';position:absolute;inset:-30%;
+.hero-title .line:nth-child(1) span{animation-delay:.08s;}
+.hero-title .line:nth-child(2) span{animation-delay:.20s;}
+.hero-title .line:nth-child(3) span{animation-delay:.32s;}
+@keyframes rise{to{transform:translateY(0);}}
+.hero-copy{
+  max-width:420px;margin-top:44px;margin-left:auto;
+  font-size:15px;color:#cfcdc4;
+  opacity:0;animation:fadeIn 1s ease .85s forwards;
+}
+@keyframes fadeIn{to{opacity:1;}}
+
+/* anillo de cifras: el motivo de esta versión */
+.ring-zone{
+  position:absolute;top:50%;right:max(-90px,-6vw);
+  width:min(58vh,560px);height:min(58vh,560px);
+  transform:translateY(-50%);z-index:1;
+  -webkit-mask-image:linear-gradient(105deg,transparent 12%,#000 42%);
+  mask-image:linear-gradient(105deg,transparent 12%,#000 42%);
+}
+.ring-zone svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;}
+.ring-a{animation:gira 70s linear infinite;}
+.ring-b{animation:gira 55s linear infinite reverse;}
+@keyframes gira{to{transform:rotate(1turn);}}
+.ring-a text{
+  font-family:var(--mono);font-size:26px;letter-spacing:14px;
+  fill:var(--humo);opacity:.75;
+}
+.ring-b text{
+  font-family:var(--mono);font-size:13px;letter-spacing:9px;
+  fill:var(--hueso);opacity:.35;
+}
+.core{
+  position:absolute;top:50%;left:50%;width:150px;height:150px;border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:var(--grad);
+  overflow:hidden;
+  box-shadow:0 0 90px rgba(240,107,168,.28);
+}
+.core::before{
+  content:'';position:absolute;inset:-40%;
   background:conic-gradient(from 20deg,
     rgba(250,203,14,.95), rgba(240,107,168,.95) 28%,
     rgba(120,186,230,.95) 58%, rgba(255,255,255,.98) 82%,
     rgba(250,203,14,.95));
-  filter:blur(46px);
-  animation:swirl 24s linear infinite;
+  filter:blur(24px);
+  animation:gira 18s linear infinite;
 }
-/* refracción: brillo especular como luz atravesando agua */
-.sphere::after{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(circle at 31% 24%, rgba(255,255,255,.85), rgba(255,255,255,0) 42%),
-    radial-gradient(circle at 74% 80%, rgba(255,255,255,.4), rgba(255,255,255,0) 38%);
-}
-@keyframes float{
-  0%,100%{transform:translate(-20%,-50%);}
-  50%{transform:translate(-20%,-54%);}
-}
-@keyframes swirl{to{transform:rotate(1turn);}}
-/* ondulación de gota: la silueta respira como líquido en suspensión */
-@keyframes morph{
-  0%,100%{border-radius:50%;}
-  30%{border-radius:52% 48% 56% 44% / 46% 54% 45% 55%;}
-  62%{border-radius:46% 54% 44% 56% / 55% 45% 56% 44%;}
-}
-@media(prefers-reduced-motion:reduce){
-  .sphere,.sphere::before,.hero-title .line span,.hero-copy{animation:none;}
-  .hero-title .line span{transform:none;}
-  .hero-copy{opacity:1;}
-  .reveal{opacity:1;transform:none;transition:none;}
-}
-.hero-content{position:relative;z-index:1;padding-top:76px;}
-.hero-label{margin-bottom:30px;}
-.hero-title .line{display:block;overflow:hidden;padding-top:.14em;margin-top:-.14em;}
-.hero-title .line span{
-  display:block;
-  transform:translateY(115%);
-  animation:rise .9s cubic-bezier(.22,.9,.3,1) forwards;
-}
-.hero-title .line:nth-child(1) span{animation-delay:.10s;}
-.hero-title .line:nth-child(2) span{animation-delay:.22s;}
-.hero-title .line:nth-child(3) span{animation-delay:.34s;}
-.hero-title .line:nth-child(4) span{animation-delay:.46s;}
-@keyframes rise{to{transform:translateY(0);}}
-.hero-copy{
-  max-width:340px;margin-top:46px;margin-left:auto;
-  font-size:15px;letter-spacing:0.15px;
-  opacity:0;animation:fadeIn 1s ease .8s forwards;
-}
-@keyframes fadeIn{to{opacity:1;}}
 .scroll-hint{
-  position:absolute;bottom:30px;right:30px;z-index:1;
+  position:absolute;bottom:26px;left:30px;z-index:2;
   transition:opacity .4s ease;
 }
 .scroll-hint.hidden{opacity:0;}
+
+/* ---------- marquesina ---------- */
+.marquee{
+  border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);
+  overflow:hidden;white-space:nowrap;padding:15px 0;
+}
+.marquee-track{display:inline-flex;animation:desfile 30s linear infinite;}
+.marquee:hover .marquee-track{animation-play-state:paused;}
+.marquee-track span{
+  font-family:var(--mono);font-size:13px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--humo);padding-right:56px;
+}
+.marquee-track span b{color:rgb(250,203,14);font-weight:400;padding-right:56px;}
+@keyframes desfile{to{transform:translateX(-50%);}}
 
 /* ---------- secciones ---------- */
 section{padding:119px 0 0;}
 .section-head{
   display:flex;align-items:baseline;gap:19px;
-  border-top:1px solid var(--ash);padding-top:15px;margin-bottom:46px;
+  border-top:1px solid var(--linea);padding-top:15px;margin-bottom:46px;
 }
-.section-head .num{font-size:11px;letter-spacing:0.05em;}
+.section-head .num{font-family:var(--mono);font-size:11px;color:rgb(250,203,14);}
 
-/* revelado al hacer scroll */
 .reveal{opacity:0;transform:translateY(32px);transition:opacity .8s ease,transform .8s ease;}
 .reveal.visible{opacity:1;transform:none;}
 
-/* modo estático (?static): captura/impresión sin animaciones */
-.static .sphere{animation:none;}
-.static .reveal{opacity:1;transform:none;transition:none;}
+/* modo estático (?static): captura e impresión sin animaciones */
 .static header{min-height:900px;}
 .static .hero-title .line span{transform:none;animation:none;}
 .static .hero-copy{opacity:1;animation:none;}
+.static .reveal{opacity:1;transform:none;transition:none;}
+.static .ring-a,.static .ring-b,.static .core::before{animation:none;}
+.static .marquee-track{animation:none;}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-title .line span,.hero-copy,.ring-a,.ring-b,.core::before,.marquee-track{animation:none!important;}
+  .hero-title .line span{transform:none;}
+  .hero-copy{opacity:1;}
+  .reveal{opacity:1;transform:none;transition:none;}
+}
 
 /* ---------- estudio ---------- */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:46px;}
 @media(max-width:900px){.split{grid-template-columns:1fr;}}
 .split .copy p+p{margin-top:19px;}
 .definition{
-  margin-top:46px;padding:30px;background:var(--paper);
-  border:1px solid var(--ash);
+  margin-top:46px;padding:30px;background:var(--tinta-2);
+  border:1px solid var(--linea);border-left:3px solid transparent;
+  border-image:var(--grad) 1;
+  border-image-slice:1;border-left-width:3px;
 }
-.definition .caption{color:var(--ink);opacity:.6;margin-bottom:8px;display:block;}
+.definition .caption{display:block;margin-bottom:8px;}
+.counters{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);margin-top:76px;}
+@media(max-width:700px){.counters{grid-template-columns:1fr;}}
+.counter{background:var(--tinta);padding:34px 30px;}
+.counter .n{
+  font-size:clamp(52px,5vw,72px);font-weight:500;line-height:1;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  font-variant-numeric:tabular-nums;
+}
+.counter .caption{display:block;margin-top:14px;}
 
-/* ---------- servicios (retícula tipo logo grid) ---------- */
-.services-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  background:var(--ash);gap:1px;border:1px solid var(--ash);
+/* ---------- servicios ---------- */
+.rows{border-top:1px solid var(--linea);}
+.row{
+  display:grid;grid-template-columns:110px 1fr auto;align-items:center;gap:24px;
+  padding:27px 6px;border-bottom:1px solid var(--linea);
+  cursor:default;position:relative;
+  transition:padding-left .35s cubic-bezier(.22,.9,.3,1),background .35s ease;
 }
-@media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:560px){.services-grid{grid-template-columns:1fr;}}
-.service-cell{
-  background:var(--paper);padding:30px;min-height:190px;
-  display:flex;flex-direction:column;justify-content:space-between;
-  transition:background .25s ease,color .25s ease;
+.row:hover{padding-left:26px;background:var(--tinta-2);}
+.row .idx{font-family:var(--mono);font-size:12px;color:var(--humo);letter-spacing:.1em;}
+.row h3{
+  font-size:clamp(21px,2.2vw,30px);font-weight:500;line-height:1.05;
+  text-transform:uppercase;transition:color .3s ease;
 }
-.service-cell:hover{background:var(--ink);color:var(--parchment);}
-.service-cell .caption{opacity:.55;}
-.service-cell h3{font-size:clamp(22px,1.8vw,26px);font-weight:400;line-height:1.15;letter-spacing:0.3px;text-transform:uppercase;margin-top:32px;}
+.row:hover h3{color:rgb(250,203,14);}
+.row .arrow{
+  font-family:var(--mono);font-size:16px;color:var(--humo);
+  transition:transform .35s cubic-bezier(.22,.9,.3,1),color .3s ease;
+}
+.row:hover .arrow{transform:translateX(8px);color:var(--hueso);}
 
 /* ---------- proyectos ---------- */
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px;}
-.projects{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+@media(max-width:1180px){.projects{grid-template-columns:1fr 1fr;}}
 @media(max-width:900px){.projects{grid-template-columns:1fr;}}
-.project-card{
-  background:var(--paper);
+.card{
+  position:relative;background:var(--tinta-2);
   background-image:
-    repeating-linear-gradient(0deg,rgba(29,29,29,.045) 0 1px,transparent 1px 28px),
-    repeating-linear-gradient(90deg,rgba(29,29,29,.045) 0 1px,transparent 1px 28px);
-  border:1px solid var(--ash);border-radius:0;
+    repeating-linear-gradient(0deg,rgba(233,231,223,.035) 0 1px,transparent 1px 30px),
+    repeating-linear-gradient(90deg,rgba(233,231,223,.035) 0 1px,transparent 1px 30px);
+  border:1px solid var(--linea);
   padding:30px;min-height:340px;
   display:flex;flex-direction:column;justify-content:space-between;
+  transition:transform .45s cubic-bezier(.22,.9,.3,1),box-shadow .45s ease;
 }
-.project-card .meta{display:flex;justify-content:space-between;align-items:baseline;}
-.project-card h3{font-size:clamp(30px,3.3vw,46px);font-weight:400;line-height:1.0;letter-spacing:0.6px;text-transform:uppercase;margin-top:76px;}
-.project-card p{font-size:15px;letter-spacing:0.15px;max-width:420px;margin-top:15px;}
-.project-card .foot{margin-top:30px;}
-.project-card.soon{background-image:none;background:var(--stone);}
-.project-card.soon h3{opacity:.45;}
+.card::before{
+  content:'';position:absolute;inset:-1px;z-index:-1;
+  background:var(--grad);opacity:0;transition:opacity .45s ease;
+}
+.card:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(0,0,0,.45);}
+.card:hover::before{opacity:1;}
+.card .meta{display:flex;justify-content:space-between;align-items:baseline;position:relative;}
+.card h3{
+  font-size:clamp(32px,3.4vw,48px);font-weight:500;line-height:1.0;
+  text-transform:uppercase;margin-top:76px;position:relative;
+}
+.card p{font-size:15px;color:#cfcdc4;max-width:420px;margin-top:15px;position:relative;}
+.card .foot{margin-top:30px;position:relative;}
+.card.soon{background-color:#101010;}
 
-/* círculos concéntricos decorativos */
-.circles{position:absolute;right:0;top:-40px;opacity:.5;pointer-events:none;}
-.section-rel{position:relative;}
+/* miniatura del sitio: se muestra el trabajo, que es la web en si */
+.card .shot{
+  position:relative;margin:22px 0 0;border:1px solid var(--linea);
+  aspect-ratio:16/10;overflow:hidden;background:#0d0d0d;
+}
+.card .shot img{
+  width:100%;height:100%;object-fit:cover;object-position:top center;
+  filter:grayscale(.85) contrast(1.02);opacity:.88;
+  transition:filter .5s ease,opacity .5s ease,transform .7s cubic-bezier(.22,.9,.3,1);
+}
+.card:hover .shot img{filter:grayscale(0) contrast(1);opacity:1;transform:scale(1.03);}
+.card .rol{
+  display:flex;gap:8px;flex-wrap:wrap;margin-top:15px;position:relative;
+}
+.card .rol span{
+  font-family:var(--mono,monospace);font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--humo);
+  border:1px solid var(--linea);border-radius:999px;padding:4px 10px;
+}
+.card h3{margin-top:0;}
+.card.soon h3{margin-top:76px;}
+.card.soon h3{color:var(--humo);}
 
 /* ---------- contacto ---------- */
-.contact{padding-bottom:0;}
-.contact-inner{padding:119px 0 76px;text-align:left;}
+.contact-inner{padding:119px 0 76px;}
 .contact .display{margin-bottom:46px;}
-.contact-links{display:flex;gap:32px;flex-wrap:wrap;}
+.contact-links{display:flex;gap:32px;flex-wrap:wrap;align-items:center;}
+.dual-note{
+  margin-top:76px;padding:26px 30px;border:1px dashed var(--linea);
+  display:flex;gap:19px;align-items:baseline;flex-wrap:wrap;
+}
+.dual-note p{font-size:14px;color:var(--humo);max-width:640px;}
+.dual-note a{color:var(--hueso);text-underline-offset:4px;}
 
 /* ---------- pie ---------- */
-footer{border-top:1px solid var(--ash);margin-top:76px;}
+footer{border-top:1px solid var(--linea);}
 .foot-inner{
   max-width:var(--max);margin:0 auto;padding:30px;
   display:flex;justify-content:space-between;gap:19px;flex-wrap:wrap;
 }
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
 </style>
 </head>
 <body>
@@ -293,26 +344,43 @@ footer{border-top:1px solid var(--ash);margin-top:76px;}
       <li><a href="#estudio">Estudio</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
-      <li><a class="nav-cta" href="#contacto">Hablemos&nbsp;→</a></li>
-      <li><a class="nav-version" href="version-2.html">Versión&nbsp;2&nbsp;↗</a></li>
+      <li><a class="pill solid" href="#contacto">Hablemos&nbsp;→</a></li>
     </ul>
   </div>
 </nav>
 
 <header id="top">
-  <div class="sphere" aria-hidden="true"></div>
+  <div class="ring-zone" aria-hidden="true">
+    <svg class="ring-a" viewBox="0 0 600 600">
+      <defs><path id="circA" d="M300,300 m-272,0 a272,272 0 1,1 544,0 a272,272 0 1,1 -544,0"/></defs>
+      <text><textPath href="#circA">0·1·2·3·4·5·6·7·8·9·0·1·2·3·4·5·6·7·8·9·0·1·2·3·4·5·6·7·8·9·0·1·2·3·4·5·6·7·8·9·0·1·2·3·4·5·6·7·8·9·0·1·2·3·4·5·6·7·8·9·0·1·2·3·4·5·6·7·8·9·0·1·2·3·4·5·6·7·8·9·</textPath></text>
+    </svg>
+    <svg class="ring-b" viewBox="0 0 600 600">
+      <defs><path id="circB" d="M300,300 m-196,0 a196,196 0 1,1 392,0 a196,196 0 1,1 -392,0"/></defs>
+      <text><textPath href="#circB">CIFRA·ESTUDIO·DIGITAL·CUERNAVACA·MORELOS·CIFRA·ESTUDIO·DIGITAL·CUERNAVACA·MORELOS·CIFRA·ESTUDIO·</textPath></text>
+    </svg>
+    <div class="core"></div>
+  </div>
+
   <div class="wrap hero-content">
     <p class="caption hero-label">Estudio digital — Cuernavaca, Morelos</p>
     <h1 class="display hero-title">
       <span class="line"><span>Cómo se ve</span></span>
       <span class="line"><span>y se cuenta</span></span>
-      <span class="line"><span>un negocio</span></span>
-      <span class="line"><span>en digital.</span></span>
+      <span class="line"><span>un negocio.</span></span>
     </h1>
-    <p class="hero-copy">Cifra construye presencia digital para negocios locales. No vendemos páginas web: diseñamos la forma en que tu negocio se ve — y la forma en que se cuenta.</p>
+    <p class="hero-copy">No vendemos páginas web. Construimos la forma en que un negocio se ve — y la forma en que se cuenta — cuando alguien lo busca por primera vez. Estudio pequeño, trabajo a medida, precios de Cuernavaca.</p>
   </div>
   <p class="caption scroll-hint" id="scrollHint">Scroll&nbsp;↓</p>
 </header>
+
+<!-- marquesina -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Estructura<b>✳</b>Narrativa<b>✳</b>Patrón<b>✳</b>Rigor<b>✳</b>Sistema<b>✳</b>Código<b>✳</b>Diseño<b>✳</b></span>
+    <span>Estructura<b>✳</b>Narrativa<b>✳</b>Patrón<b>✳</b>Rigor<b>✳</b>Sistema<b>✳</b>Código<b>✳</b>Diseño<b>✳</b></span>
+  </div>
+</div>
 
 <main>
 
@@ -320,7 +388,7 @@ footer{border-top:1px solid var(--ash);margin-top:76px;}
 <section id="estudio">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="caption num">01</span>
+      <span class="num">01</span>
       <span class="caption">Estudio</span>
     </div>
     <div class="split reveal">
@@ -334,6 +402,20 @@ footer{border-top:1px solid var(--ash);margin-top:76px;}
       <span class="caption">ci·fra — sustantivo femenino</span>
       <p><strong>1.</strong> Número, dato, signo con que se representa una cantidad. <strong>2.</strong> Escritura secreta; código que hay que descifrar.</p>
     </div>
+    <div class="counters reveal">
+      <div class="counter">
+        <span class="n" data-count="3" data-pad="3">000</span>
+        <span class="caption">Sitios construidos</span>
+      </div>
+      <div class="counter">
+        <span class="n" data-count="1" data-pad="3">000</span>
+        <span class="caption">En producción con dominio propio</span>
+      </div>
+      <div class="counter">
+        <span class="n" data-count="6" data-pad="2">00</span>
+        <span class="caption">Servicios declarados</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -341,60 +423,66 @@ footer{border-top:1px solid var(--ash);margin-top:76px;}
 <section id="servicios">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="caption num">02</span>
+      <span class="num">02</span>
       <span class="caption">Servicios</span>
     </div>
-    <div class="services-grid reveal">
-      <div class="service-cell"><span class="caption">S.01</span><h3>Sitios web a&nbsp;medida</h3></div>
-      <div class="service-cell"><span class="caption">S.02</span><h3>Identidad y dirección visual</h3></div>
-      <div class="service-cell"><span class="caption">S.03</span><h3>Catálogos y tiendas en&nbsp;línea</h3></div>
-      <div class="service-cell"><span class="caption">S.04</span><h3>Narrativa y contenido</h3></div>
-      <div class="service-cell"><span class="caption">S.05</span><h3>Presencia y SEO local</h3></div>
-      <div class="service-cell"><span class="caption">S.06</span><h3>Mantenimiento y evolución</h3></div>
+    <div class="rows reveal">
+      <div class="row"><span class="idx">S.01</span><h3>Sitios web a medida</h3><span class="arrow">→</span></div>
+      <div class="row"><span class="idx">S.02</span><h3>Identidad y dirección visual</h3><span class="arrow">→</span></div>
+      <div class="row"><span class="idx">S.03</span><h3>Catálogos y tiendas en línea</h3><span class="arrow">→</span></div>
+      <div class="row"><span class="idx">S.04</span><h3>Narrativa y contenido</h3><span class="arrow">→</span></div>
+      <div class="row"><span class="idx">S.05</span><h3>Presencia y SEO local</h3><span class="arrow">→</span></div>
+      <div class="row"><span class="idx">S.06</span><h3>Mantenimiento y evolución</h3><span class="arrow">→</span></div>
     </div>
   </div>
 </section>
 
 <!-- 03 PROYECTOS -->
 <section id="proyectos">
-  <div class="wrap section-rel">
-    <svg class="circles" width="220" height="220" viewBox="0 0 220 220" aria-hidden="true">
-      <circle cx="110" cy="110" r="108" fill="none" stroke="#bfbebe" stroke-width="1"/>
-      <circle cx="110" cy="110" r="78" fill="none" stroke="#bfbebe" stroke-width="1"/>
-      <circle cx="110" cy="110" r="48" fill="none" stroke="#bfbebe" stroke-width="1"/>
-      <circle cx="110" cy="110" r="18" fill="none" stroke="#bfbebe" stroke-width="1"/>
-    </svg>
+  <div class="wrap">
     <div class="section-head reveal">
-      <span class="caption num">03</span>
+      <span class="num">03</span>
       <span class="caption">Proyectos</span>
     </div>
-    <div class="filters reveal">
-      <button class="filter-btn active" data-filter="todo">Todo</button>
-      <button class="filter-btn" data-filter="web">Web</button>
-      <button class="filter-btn" data-filter="identidad">Identidad</button>
-    </div>
-    <div class="projects reveal">
-      <article class="project-card" data-cat="web identidad">
+    <div class="projects">
+      <article class="card reveal">
         <div class="meta">
           <span class="caption">P.001 — 2026</span>
-          <span class="caption">Web · Identidad</span>
+          <span class="caption">Web · En vivo</span>
         </div>
         <div>
-          <h3>Cifra</h3>
-          <p>El primer proyecto del estudio es el estudio mismo: este sitio. Sistema de diseño editorial, tipografía monumental y una sola concesión al color.</p>
+          <h3>Reloj 181<span class="grad-text">.</span></h3>
+          <p>Estudio de fotografía y video de <strong>Emily Razo</strong>. Cifra construyó el sitio: quince páginas generadas desde un solo sistema, animación WebGL escrita a mano, cero plantillas y cero librerías externas. Las fotografías y la marca son de ella.</p>
+          <div class="shot"><img src="assets/img/proyectos/reloj181.webp" alt="Portada del sitio de Reloj 181" loading="lazy" width="1200" height="750"></div>
+          <div class="rol"><span>Sitio web</span><span>Sistema de diseño</span><span>SEO local</span><span>Animación</span></div>
         </div>
-        <div class="foot"><span class="ghost-link">Lo estás viendo <span class="arrow">→</span></span></div>
+        <div class="foot"><a class="pill" href="https://www.reloj181.shop" target="_blank" rel="noopener">Ver el sitio en vivo ↗</a></div>
       </article>
-      <article class="project-card soon" data-cat="web">
+
+      <article class="card reveal">
         <div class="meta">
-          <span class="caption">P.002 — Próximamente</span>
+          <span class="caption">P.002 — 2026</span>
+          <span class="caption">Web · Identidad · Beta</span>
+        </div>
+        <div>
+          <h3>Desvariando<span class="grad-text">.</span></h3>
+          <p>Marca cultural que documenta el recorrido de una idea. El sitio traduce esa premisa a estructura: un diagrama de bifurcaciones que crece mientras se lee. Proyecto propio, todavía en versión beta.</p>
+          <div class="shot"><img src="assets/img/proyectos/desvariando.webp" alt="Portada del sitio de Desvariando" loading="lazy" width="1200" height="750"></div>
+          <div class="rol"><span>Sitio web</span><span>Identidad</span><span>Narrativa</span></div>
+        </div>
+        <div class="foot"><span class="caption">Beta — enlace próximamente</span></div>
+      </article>
+
+      <article class="card soon reveal">
+        <div class="meta">
+          <span class="caption">P.003 — Próximamente</span>
           <span class="caption">Web</span>
         </div>
         <div>
           <h3>Tu negocio<br>aquí.</h3>
           <p>Este espacio está reservado para el siguiente negocio de Cuernavaca que decida tomarse en serio su presencia digital.</p>
         </div>
-        <div class="foot"><a class="ghost-link" href="#contacto">Hablemos <span class="arrow">→</span></a></div>
+        <div class="foot"><a class="pill" href="#contacto">Hablemos →</a></div>
       </article>
     </div>
   </div>
@@ -404,20 +492,20 @@ footer{border-top:1px solid var(--ash);margin-top:76px;}
 <section id="contacto" class="contact">
   <div class="wrap contact-inner">
     <div class="section-head reveal">
-      <span class="caption num">04</span>
+      <span class="num">04</span>
       <span class="caption">Contacto</span>
     </div>
-    <h2 class="display reveal">Hablemos.</h2>
+    <h2 class="display reveal">Hablemos<span class="grad-text">.</span></h2>
     <div class="contact-links reveal">
-      <a id="wa-link" class="ghost-link" href="https://wa.me/" hidden>WhatsApp directo <span class="arrow">→</span></a>
-      <a class="ghost-link" href="mailto:angeldesvaria@gmail.com">angeldesvaria@gmail.com <span class="arrow">→</span></a>
-      <span class="ghost-link">Cuernavaca, Morelos — MX</span>
+      <a id="wa-link" class="pill solid" href="https://wa.me/" hidden>WhatsApp directo</a>
+      <a class="pill solid" href="mailto:angeldesvaria@gmail.com">angeldesvaria@gmail.com</a>
+      <span class="caption">Cuernavaca, Morelos — MX</span>
     </div>
   </div>
   <footer>
     <div class="foot-inner">
       <span class="caption">© 2026 Cifra — Estudio digital</span>
-      <span class="caption">Hecho en casa · Este sitio es el proyecto 001</span>
+      <span class="caption">Cuernavaca, Morelos — MX</span>
     </div>
   </footer>
 </section>
@@ -455,17 +543,31 @@ const io=new IntersectionObserver(entries=>{
 },{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// filtros de proyectos
-const buttons=document.querySelectorAll('.filter-btn');
-const cards=document.querySelectorAll('.project-card');
-buttons.forEach(btn=>btn.addEventListener('click',()=>{
-  buttons.forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  const f=btn.dataset.filter;
-  cards.forEach(c=>{
-    c.style.display=(f==='todo'||c.dataset.cat.includes(f))?'flex':'none';
-  });
-}));
+// contadores animados: las cifras cobran vida al entrar en pantalla
+const fmt=(v,pad)=>String(Math.round(v)).padStart(pad,'0');
+const easeOut=t=>1-Math.pow(1-t,3);
+function animateCounter(el){
+  const target=parseFloat(el.dataset.count);
+  const pad=parseInt(el.dataset.pad||'1',10);
+  const dur=1400, t0=performance.now();
+  function frame(t){
+    const k=Math.min((t-t0)/dur,1);
+    el.textContent=fmt(target*easeOut(k),pad);
+    if(k<1)requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+}
+const ioCount=new IntersectionObserver(entries=>{
+  for(const e of entries){
+    if(e.isIntersecting){animateCounter(e.target);ioCount.unobserve(e.target);}
+  }
+},{threshold:0.4});
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isStatic=document.documentElement.classList.contains('static');
+document.querySelectorAll('.counter .n').forEach(el=>{
+  if(reduced||isStatic){el.textContent=fmt(parseFloat(el.dataset.count),parseInt(el.dataset.pad||'1',10));}
+  else{ioCount.observe(el);}
+});
 </script>
 </body>
 </html>
