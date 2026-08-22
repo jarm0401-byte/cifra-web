@@ -30,6 +30,10 @@ Cuando a uno se le acaban los tokens o el contexto, Angel viene con el otro y el
    ("si no se ve, no acabaste"): capturas con Chrome headless, leer el PNG, comparar,
    iterar hasta que esté bien.
 8. **Git:** commits descriptivos en español, push después de cada hito. Nunca force-push.
+9. **Memoria privada:** todo cambio importante se registra también en `memoria.html`
+   (agregando una entrada al final del arreglo `MEMORIAS`: fecha, motor, título, detalle,
+   hash del commit). Ese archivo es LOCAL y PRIVADO de Angel: está en `.gitignore` y
+   **jamás se sube** al repo ni al deploy.
 
 ## Sistema de doble versión
 

@@ -5,6 +5,40 @@ Formato sugerido: `## AAAA-MM-DD — <motor>` + Cambios / Hallazgos / Ideas / Pe
 
 ---
 
+## 2026-08-21 — OpenCode (videos fuera del repo + estructura libre)
+
+**Cambios**
+- Creado `.gitignore` raíz: los videos crudos de `inspiraciones/` (`mp4/mov/mkv/avi/
+  m4v/webm`) quedan excluidos de git — viven solo en la PC de Angel. Lo aprobado se
+  comprime y pasa a `assets/video/`, que sí se despliega.
+- `LEEME.md` actualizado: estructura libre por proyecto (Angel puede crear minicarpetas
+  libremente; los motores leen recursivamente) + nueva convención de peso/videos.
+- Verificado: OneDrive NO sincroniza `Documents` en esta PC — el respaldo de material
+  pesado es manual.
+
+**Pendiente**
+- Commit/push de todo lo de hoy (estructura + .gitignore), cuando Angel dé el visto.
+
+## 2026-08-21 — OpenCode (carpeta de inspiraciones)
+
+**Cambios**
+- Creada `inspiraciones/` a petición de Angel: cantera de material visual para que los
+  motores recorten, editen y jueguen con él antes de pasarlo a `assets/`.
+  - `_refs/` (capturas/moodboards), `recursos/{svg,paletas,texturas}`.
+  - Una carpeta por proyecto: `cifra/`, `desvariando/`, `reloj/` — cada una con
+    `img/`, `video/` y su `notas.md` para anotar qué es cada archivo y qué se decidió.
+- Escrito `inspiraciones/LEEME.md`: convenciones de nombres, límites de peso para git,
+  originales intocables y flujo subida → prueba → `assets/`.
+
+**Ideas**
+- Cuando haya fotos reales de Reloj 181 en la carpeta, probarlas como fondo de cards
+  o hero con tratamiento B/N + acento.
+- Pendiente confirmar permiso de publicación del material fotográfico (proveedor).
+
+**Pendiente**
+- Commit/push de esta estructura (esperando visto de Angel).
+- Que Angel empiece a soltar material; primera tarea sugerida: recortes 16:9 para cards.
+
 ## 2026-08-21 — OpenCode (primera sesión del relevo)
 
 **Cambios**

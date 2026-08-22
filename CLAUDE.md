@@ -12,5 +12,9 @@ OpenCode mantiene la **Versión 2** (`version-2.html`). No la rompas ni la fusio
 que Angel lo pida; deja tus hallazgos e ideas en la bitácora para que él las aproveche
 (y lee los suyos). Cuando termines una sesión, registra tu entrada en `BITACORA.md`.
 
+Además, cada cambio importante debe registrarse en `memoria.html` (arreglo `MEMORIAS`,
+entrada nueva al final). Ojo: ese archivo es **local y privado de Angel** — está en
+`.gitignore`, no existe en GitHub y jamás debes subirlo.
+
 Los botones «Versión 1 ↔ Versión 2» de ambas páginas son elementos compartidos: mantenlos
 funcionando en ambos archivos.
