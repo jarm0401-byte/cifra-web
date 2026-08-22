@@ -1,0 +1,412 @@
+<title>Cómo pedirme cosas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CIFRA — Manual de trabajo con Claude Code
+   Hereda el sistema del sitio (Parchment/Ink/Inter) y suma
+   JetBrains Mono — la misma fuente de su terminal — para todo
+   lo que es literalmente copiable a la línea de comandos.
+   Documento de una sola atmósfera, pintado explícitamente.
+   ============================================================ */
+:root{
+  --parchment:#e5e4e0;
+  --ink:#1d1d1d;
+  --paper:#ffffff;
+  --ash:#bfbebe;
+  --stone:#cdcdc9;
+  --muted:#6b6a67;
+  --grad:linear-gradient(255deg, rgb(250,203,14), rgb(240,107,168) 30%, rgb(120,186,230) 65%, rgb(255,255,255));
+  --font:'Inter','Neue Haas Grotesk Display','Helvetica Neue',Arial,sans-serif;
+  --mono:'JetBrains Mono','Consolas','Courier New',monospace;
+  --col:1100px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:var(--parchment);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.55;letter-spacing:0.18px;-webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--ink);color:var(--parchment);}
+.sheet{max-width:var(--col);margin:0 auto;padding:0 28px 120px;}
+
+/* ---------- tipografía ---------- */
+.caption{font-size:11px;line-height:1.4;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+.display{font-size:clamp(40px,6.4vw,84px);font-weight:400;line-height:0.86;letter-spacing:1.1px;text-transform:uppercase;text-wrap:balance;}
+h2{font-size:clamp(28px,3.4vw,44px);font-weight:400;line-height:0.92;letter-spacing:0.6px;text-transform:uppercase;text-wrap:balance;}
+h3{font-size:22px;font-weight:400;line-height:1.1;letter-spacing:0.2px;text-transform:uppercase;}
+h4{font-size:15px;font-weight:600;letter-spacing:0.01em;}
+p{max-width:66ch;}
+strong{font-weight:600;}
+em{font-style:normal;border-bottom:1px solid var(--ink);}
+
+header.doc{padding:64px 0 0;}
+.rule-grad{height:3px;background:var(--grad);margin-bottom:40px;}
+.lede{font-size:19px;max-width:60ch;margin-top:26px;color:var(--ink);}
+
+section{margin-top:80px;}
+.sec-head{
+  display:grid;grid-template-columns:78px 1fr;gap:24px;align-items:baseline;
+  border-top:1px solid var(--ink);padding-top:16px;margin-bottom:28px;
+}
+.sec-body{display:flex;flex-direction:column;gap:24px;}
+
+/* ---------- bloque de énfasis ---------- */
+.thesis{background:var(--ink);color:var(--parchment);padding:32px 34px;display:flex;flex-direction:column;gap:13px;}
+.thesis .caption{color:var(--stone);}
+.thesis p{max-width:62ch;}
+.thesis em{border-bottom-color:var(--parchment);}
+
+/* ---------- pares así no / así sí ---------- */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ash);border:1px solid var(--ash);}
+.pair > div{background:var(--paper);padding:20px 22px;display:flex;flex-direction:column;gap:9px;}
+.pair .bad{background:#deddd9;}
+.pair .said{font-family:var(--mono);font-size:13.5px;line-height:1.5;letter-spacing:0;}
+.pair .bad .said{color:var(--muted);}
+.tag{display:inline-block;align-self:flex-start;font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;padding:3px 8px;}
+.tag.no{background:transparent;color:var(--muted);border:1px solid var(--ash);}
+.tag.si{background:var(--ink);color:var(--parchment);}
+.pair .why{font-size:13.5px;color:var(--muted);}
+
+/* ---------- listas ---------- */
+ul.spec{list-style:none;display:flex;flex-direction:column;gap:8px;}
+ul.spec li{position:relative;padding-left:20px;max-width:64ch;}
+ul.spec li::before{content:"";position:absolute;left:0;top:10px;width:9px;height:1px;background:var(--ink);}
+
+/* ---------- niveles de autoridad ---------- */
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ash);border:1px solid var(--ash);}
+.level{background:var(--paper);padding:22px 22px 24px;display:flex;flex-direction:column;gap:9px;}
+.level .n{font-size:38px;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-1px;}
+.level .say{font-family:var(--mono);font-size:13px;line-height:1.5;letter-spacing:0;color:var(--ink);}
+.level p{font-size:13.5px;color:var(--muted);}
+
+/* ---------- frases copiables ---------- */
+.snippet{background:var(--ink);color:var(--parchment);padding:18px 20px;display:flex;flex-direction:column;gap:8px;}
+.snippet .caption{color:var(--stone);}
+.snippet code{font-family:var(--mono);font-size:13.5px;line-height:1.6;letter-spacing:0;white-space:pre-wrap;display:block;}
+.snips{display:flex;flex-direction:column;gap:14px;}
+
+/* ---------- dudas ---------- */
+.q{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--ash);align-items:start;}
+.q:first-of-type{border-top:1px solid var(--ink);}
+.q .n{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:3px;}
+.q .body{display:flex;flex-direction:column;gap:5px;}
+.q .ask{font-size:17px;max-width:60ch;}
+.q .ctx{font-size:13.5px;color:var(--muted);max-width:64ch;}
+.q .blocks{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--ash);align-self:flex-start;padding-bottom:2px;}
+
+.table-wrap{overflow-x:auto;background:var(--paper);}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px;}
+th,td{text-align:left;padding:13px 20px;border-bottom:1px solid var(--stone);vertical-align:top;}
+th{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);}
+tr:last-child td{border-bottom:none;}
+td .mono{font-family:var(--mono);font-size:13px;letter-spacing:0;}
+
+footer.doc{margin-top:96px;padding-top:20px;border-top:1px solid var(--ink);display:flex;flex-wrap:wrap;gap:12px 40px;justify-content:space-between;}
+
+@media (max-width:860px){
+  .pair{grid-template-columns:1fr;}
+  .levels{grid-template-columns:1fr;}
+  .sec-head{grid-template-columns:1fr;gap:6px;}
+  .q{grid-template-columns:1fr;gap:6px;}
+}
+@media print{
+  @page{size:letter;margin:15mm 14mm;}
+  body{font-size:11px;}
+  .sheet{padding:0;max-width:none;}
+  section{margin-top:32px;break-inside:avoid;}
+  .pair,.levels,.thesis,.snippet{break-inside:avoid;}
+  header.doc{padding-top:0;}
+  .display{font-size:52px;}
+  h2{font-size:25px;}
+}
+</style>
+
+<div class="sheet">
+
+<header class="doc">
+  <div class="rule-grad"></div>
+  <span class="caption">Cifra — Manual interno · D.02</span>
+  <h1 class="display" style="margin-top:14px;">Cómo<br>pedirme<br>cosas.</h1>
+  <p class="lede">Lo que sigue no es teoría: está sacado de lo que ya nos pasó construyendo Cifra, Desvariando y el tarifario. Si aplicas tres cosas de aquí, el resto del proyecto avanza al doble.</p>
+</header>
+
+<section>
+  <div class="sec-head"><span class="caption">01</span><h2>Lo primero:<br>dime cuánta<br>correa te doy</h2></div>
+  <div class="sec-body">
+    <p>El 80% de la fricción entre nosotros no es técnica, es de permiso. Tú no sabes si me vas a ofender corrigiéndome y yo no sé si puedo publicar algo sin preguntarte. Se arregla con una palabra al inicio de cada encargo:</p>
+    <div class="levels">
+      <div class="level">
+        <span class="n">1</span>
+        <h4>Suelto</h4>
+        <p class="say">“Hazlo y no me preguntes nada.”</p>
+        <p>Decido todo, ejecuto completo, te enseño el resultado terminado. Úsalo para trabajo reversible: código, borradores, investigación, archivos nuevos.</p>
+      </div>
+      <div class="level">
+        <span class="n">2</span>
+        <h4>Con revisión</h4>
+        <p class="say">“Hazlo, pero enséñame antes de subirlo.”</p>
+        <p>Construyo todo y me detengo justo antes del paso irreversible. Este es el modo correcto para casi todo lo de Cifra: el sitio, propuestas, cualquier cosa que vea un cliente.</p>
+      </div>
+      <div class="level">
+        <span class="n">3</span>
+        <h4>Solo opinión</h4>
+        <p class="say">“No toques nada, dime qué harías.”</p>
+        <p>No modifico ni un archivo. Analizo y te doy la recomendación. Úsalo cuando estés decidiendo, no ejecutando.</p>
+      </div>
+    </div>
+    <p>Si no dices nada, asumo el nivel 2. Y para cosas que salen al mundo —publicar, mandar correos, borrar— siempre te voy a preguntar aunque hayas dicho nivel 1.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="caption">02</span><h2>Anatomía de<br>un buen encargo</h2></div>
+  <div class="sec-body">
+    <p>Un encargo completo tiene cuatro partes. Te faltan casi siempre la tercera y la cuarta.</p>
+    <ul class="spec">
+      <li><strong>Qué quieres</strong> — el resultado, no el paso. “Quiero que un prospecto vea mi trabajo”, no “agrégale una sección”.</li>
+      <li><strong>Para quién y dónde se usa</strong> — no es lo mismo algo para ti, para un cliente, o para imprimir.</li>
+      <li><strong>La restricción</strong> — lo que no debo hacer. “Sin tocar el hero”, “que quepa en una hoja”, “nada que yo no pueda sostener en persona”.</li>
+      <li><strong>Cómo sabemos que quedó bien</strong> — “que se vea bien en celular”, “que un señor de 55 años lo entienda”, “que cargue rápido en datos móviles”.</li>
+    </ul>
+
+    <div class="pair">
+      <div class="bad">
+        <span class="tag no">Así no</span>
+        <p class="said">mejora la página de cifra</p>
+        <p class="why">Voy a adivinar qué te molesta. Probablemente toque justo lo que sí te gustaba.</p>
+      </div>
+      <div>
+        <span class="tag si">Así sí</span>
+        <p class="said">La sección de servicios se siente plana comparada con el hero. Dame 2 opciones, sin cambiar tipografía ni colores. Enséñame capturas antes de tocar el archivo.</p>
+        <p class="why">Sé qué, con qué límite, y cómo te lo entrego.</p>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="bad">
+        <span class="tag no">Así no</span>
+        <p class="said">no me gustó</p>
+        <p class="why">Es información real pero incompleta. Sin saber qué elemento ni qué sensación, mi segundo intento es otra lotería.</p>
+      </div>
+      <div>
+        <span class="tag si">Así sí</span>
+        <p class="said">No me gustó el hero: se siente frío y corporativo, quiero que se sienta hecho a mano. Lo demás déjalo igual.</p>
+        <p class="why">Elemento + sensación + qué no tocar. Con eso acierto a la primera.</p>
+      </div>
+    </div>
+
+    <div class="thesis">
+      <span class="caption">El atajo que ya descubriste</span>
+      <p>Pasarme un link de <strong>styles.refero.design</strong> fue el mejor movimiento que has hecho conmigo: en un solo link me das paleta, tipografía, escala, espaciados y componentes. Reemplaza veinte mensajes de ida y vuelta.</p>
+      <p><em>Generaliza ese hábito:</em> cuando no sepas cómo describir lo que quieres, enséñame algo. Una captura, un link, un PDF que te gustó, la foto de un empaque. Yo leo imágenes.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="caption">03</span><h2>Lo que puedo<br>hacer y no<br>me pides</h2></div>
+  <div class="sec-body">
+    <p>Me estás usando casi solo como constructor. Estas son capacidades que ya tengo activas en tu máquina y que no has estrenado:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Puedo</th><th>Pídemelo así</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Abrir tu sitio en Chrome y probarlo</strong> como usuario: hacer clic, llenar formularios, ver la consola, medir qué truena en móvil</td>
+            <td class="mono">Abre cifra-web en el navegador, revísalo como si fueras un cliente en celular y dime qué falla</td>
+          </tr>
+          <tr>
+            <td><strong>Espiar a tu competencia</strong> — entrar a los sitios de EsBrillante, DevITM y Orbis y compararlos contra el tuyo, punto por punto</td>
+            <td class="mono">Compara mi sitio contra esbrillante.mx y devitm.com: en qué gano, en qué pierdo</td>
+          </tr>
+          <tr>
+            <td><strong>Trabajar en segundo plano</strong> mientras tú haces otra cosa, y avisarte al terminar</td>
+            <td class="mono">Corre eso en segundo plano y avísame cuando acabe</td>
+          </tr>
+          <tr>
+            <td><strong>Convertir un flujo repetido en comando</strong> — como ya hicimos con <span class="mono">/nueva-web</span></td>
+            <td class="mono">Esto ya te lo pedí tres veces: conviértelo en skill</td>
+          </tr>
+          <tr>
+            <td><strong>Mantener Notion vivo</strong> — mover lo que quedó en el lugar equivocado, convertir párrafos en tablas y callouts</td>
+            <td class="mono">/notion — revisa lo que agregué ayer y ponlo donde va</td>
+          </tr>
+          <tr>
+            <td><strong>Escribir, no solo programar</strong> — guiones de venta, correos de seguimiento, textos de un cliente, respuestas a un regateo</td>
+            <td class="mono">Escríbeme el mensaje de seguimiento para el prospecto que no ha contestado en 5 días</td>
+          </tr>
+          <tr>
+            <td><strong>Recordar entre sesiones</strong>, pero solo si me lo dices</td>
+            <td class="mono">Guarda en memoria: [la decisión] y por qué la tomamos</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="caption">04</span><h2>Lo que no<br>puedo hacer</h2></div>
+  <div class="sec-body">
+    <p>Para que no esperes en vano. Esto no es modestia, es dónde está la pared:</p>
+    <ul class="spec">
+      <li><strong>No puedo entrar a tus cuentas.</strong> Vercel, el banco, tu Apple ID, comprar un dominio: todo eso necesita que tú te sientes a hacerlo. Lleva un mes trabado ahí.</li>
+      <li><strong>No veo tu celular.</strong> Puedo simular un tamaño de pantalla, pero no sé cómo se ve en <em>tu</em> teléfono con <em>tu</em> internet. Esa prueba es tuya.</li>
+      <li><strong>No sé nada de tu negocio que no me digas.</strong> No invento precios, testimonios ni datos de clientes. Si el copy de Desvariando sigue siendo de relleno es porque nunca me diste el contenido real.</li>
+      <li><strong>No recuerdo automáticamente.</strong> Solo queda lo que guardo en memoria. Si algo importa para dentro de un mes, dímelo en el momento.</li>
+      <li><strong>No te voy a dar la razón por educación.</strong> Si te digo que un precio está mal o que una idea no se sostiene, es lo que pienso. Discútelo, no lo tomes como orden — y si insistes, se hace a tu manera y ya.</li>
+    </ul>
+    <div class="thesis">
+      <span class="caption">Truco de terminal</span>
+      <p>Cuando algo necesita tu login —como <strong>vercel login</strong>— escríbelo en el chat con un signo de admiración al inicio: <span style="font-family:var(--mono);">! vercel login</span>. Se ejecuta en tu sesión y yo veo el resultado, sin que tengas que salirte a otra ventana.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="caption">05</span><h2>Frases que<br>te van a servir</h2></div>
+  <div class="sec-body">
+    <p>Cópialas tal cual. Están escritas para tu forma de trabajar.</p>
+    <div class="snips">
+      <div class="snippet">
+        <span class="caption">Para arrancar un sitio nuevo</span>
+        <code>/nueva-web [link de refero] [nombre]
+El contacto es [correo/WhatsApp]. Nivel 2: enséñame captura antes de subir a GitHub.</code>
+      </div>
+      <div class="snippet">
+        <span class="caption">Para revisar algo con ojos ajenos</span>
+        <code>Revisa cifra-web como si fueras el dueño de una barbería de 55 años entrando desde un celular de gama media. Dime las 3 cosas que lo harían dudar de contratarme.</code>
+      </div>
+      <div class="snippet">
+        <span class="caption">Para corregir sin rehacer</span>
+        <code>Solo cambia [elemento]. Se siente [sensación]. Quiero que se sienta [sensación deseada]. No toques nada más.</code>
+      </div>
+      <div class="snippet">
+        <span class="caption">Para decidir sin ejecutar</span>
+        <code>No toques nada. Dame tu recomendación con el argumento en contra incluido.</code>
+      </div>
+      <div class="snippet">
+        <span class="caption">Para cerrar la sesión</span>
+        <code>Guarda en memoria lo que decidimos hoy y dime qué quedó pendiente de mi lado.</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="caption">06</span><h2>Mis dudas<br>sobre Cifra</h2></div>
+  <div class="sec-body">
+    <p>Preguntaste qué dudas tengo. Estas son reales, salieron de revisar el proyecto hoy, y están ordenadas por lo que traban más trabajo.</p>
+
+    <div class="q">
+      <span class="n">01</span>
+      <div class="body">
+        <span class="blocks">Traba: todo</span>
+        <p class="ask">¿Cuándo conectas Vercel?</p>
+        <p class="ctx">Cifra y Desvariando llevan un mes en GitHub sin URL pública. Vendes presencia digital y no tienes una liga que mandar por WhatsApp. Son 15 minutos y solo tú puedes hacerlo.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <span class="n">02</span>
+      <div class="body">
+        <span class="blocks">Traba: credibilidad</span>
+        <p class="ask">¿El correo de Cifra va a seguir siendo <span style="font-family:var(--mono);font-size:15px;">angeldesvaria@gmail.com</span>?</p>
+        <p class="ctx">Es el único contacto que hay en tu sitio, y es tu correo creativo. En el tarifario le vendes correo profesional a tus clientes por $600. Tener “desvaria@gmail” como contacto de estudio es la contradicción más visible que tienes ahora mismo.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <span class="n">03</span>
+      <div class="body">
+        <span class="blocks">Traba: conversión</span>
+        <p class="ask">¿Por qué tu sitio no tiene WhatsApp?</p>
+        <p class="ctx">En C.01 le prometes al cliente “botón directo a WhatsApp” porque sabes que es como se contrata en Cuernavaca. Tu propio sitio pide que te escriban un correo. Tampoco hay Instagram. Si me das el número, lo agrego hoy.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <span class="n">04</span>
+      <div class="body">
+        <span class="blocks">Traba: márgenes reales</span>
+        <p class="ask">¿Con qué proveedor vas a dar dominio y hosting?</p>
+        <p class="ctx">El tarifario promete “$1,290 al año” pero yo puse ese número sin saber tu costo. Vercel es gratis para sitios como estos; el dominio .com anda en $200–400 al año. Si es así, ahí hay margen; si vas a usar otro hosting, hay que recalcular.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <span class="n">05</span>
+      <div class="body">
+        <span class="blocks">Traba: primera venta</span>
+        <p class="ask">¿Hacemos dos demos falsas para enseñar?</p>
+        <p class="ctx">Tu portafolio dice “P.002 — Tu negocio aquí”. Nadie compra una promesa. Dos sitios ficticios —una barbería y una fonda— te dan qué enseñar en la primera visita. Es un día de trabajo mío y no depende de que consigas cliente.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <span class="n">06</span>
+      <div class="body">
+        <span class="blocks">Traba: identidad</span>
+        <p class="ask">¿Cifra habla de “nosotros” o de “yo”?</p>
+        <p class="ctx">El sitio dice “no vendemos páginas web”, en plural, pero Cifra eres tú solo. El plural da respaldo y el singular da cercanía — con negocios de barrio, el singular suele vender más. Es una decisión de marca que no debería tomar yo.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <span class="n">07</span>
+      <div class="body">
+        <span class="blocks">Traba: propuestas</span>
+        <p class="ask">¿Reloj 181 es tu proveedor de foto?</p>
+        <p class="ctx">En el tarifario escribí “se coordina un proveedor y el cliente le paga directo”. Si Reloj 181 es la respuesta, eso deja de ser una limitación y se vuelve una ventaja que ninguna agencia local tiene: sitio y sesión de fotos resueltos por el mismo contacto. Necesito saber si puedo decirlo.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <span class="n">08</span>
+      <div class="body">
+        <span class="blocks">Traba: el sitio</span>
+        <p class="ask">¿Tienes fotos o video propios?</p>
+        <p class="ctx">Las carpetas <span style="font-family:var(--mono);font-size:14px;">assets/img</span> y <span style="font-family:var(--mono);font-size:14px;">assets/video</span> siguen vacías. Pediste “mucho movimiento” y hoy todo el movimiento es generado por código. Un video corto real cambiaría el sitio por completo. Aviso: no tienes ffmpeg instalado, así que necesito MP4 ya listos para web o instalarlo.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <span class="n">09</span>
+      <div class="body">
+        <span class="blocks">Traba: medir</span>
+        <p class="ask">¿Le ponemos analítica a tu sitio?</p>
+        <p class="ctx">En C.02 vendes “analítica instalada”. Tu sitio no la tiene, así que no vas a saber si alguien entró después de una visita. Con Vercel viene incluida y gratis.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <span class="n">10</span>
+      <div class="body">
+        <span class="blocks">Traba: iteración</span>
+        <p class="ask">¿La esfera se queda?</p>
+        <p class="ctx">Te dije que la gota iridiscente se lee un poco a startup y tú decidiste conservarla para v1. Fue tu decisión y está bien. Solo quiero saber si la damos por cerrada o si en algún momento la reabrimos — no la voy a volver a mencionar hasta que lo digas.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="caption">07</span><h2>Los tres<br>hábitos que<br>más te van<br>a cambiar</h2></div>
+  <div class="sec-body">
+    <div class="thesis">
+      <span class="caption">Si solo te llevas tres cosas</span>
+      <p><strong>1. Empieza por el resultado, no por el paso.</strong> Tú conoces tu negocio mejor que yo; yo conozco las formas de llegar mejor que tú. Dime a dónde quieres llegar y déjame proponer el camino — si me pides el paso, pierdes lo segundo.</p>
+      <p><strong>2. Corrígeme en el momento y con la razón.</strong> Cuando me dijiste que tú no eres fotógrafo, no solo arreglé una frase: cambié el copy de todo el sitio y lo guardé para siempre. <em>Una corrección con motivo vale más que diez instrucciones.</em></p>
+      <p><strong>3. Termina cada sesión con lo que sigue.</strong> Pídeme siempre dos cosas al cerrar: que guarde en memoria lo decidido, y que te diga qué quedó pendiente <em>de tu lado</em>. Casi todo lo trabado en Cifra hoy está trabado ahí.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="doc">
+  <span class="caption">Cifra — Estudio digital · Cuernavaca, Morelos</span>
+  <span class="caption">D.02 · 21 de agosto de 2026</span>
+</footer>
+
+</div>
